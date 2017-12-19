@@ -51,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				23A6C35A1FE923830052724D /* BWCoreAnimationDemo */,
-				23A6C3771FE924330052724D /* System */,
 				23A6C3591FE923830052724D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +68,7 @@
 			children = (
 				23A6C3841FE924610052724D /* Base */,
 				23A6C3711FE923F60052724D /* Main */,
+				23A6C3771FE924330052724D /* System */,
 			);
 			path = BWCoreAnimationDemo;
 			sourceTree = "<group>";
