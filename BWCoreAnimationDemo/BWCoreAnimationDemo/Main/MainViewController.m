@@ -49,6 +49,42 @@
     //调整layer的层级
     //“可以改变屏幕上图层的顺序，但不能改变事件传递的顺序。”
     //    self.layerView.layer.zPosition = 1;
+    
+    //圆角
+    blueLayer.cornerRadius = 5.0;
+    
+    //边框宽度及颜色
+    //边框绘制在图层边界内且在最上方
+    blueLayer.borderWidth = 1.0;
+    blueLayer.borderColor = [UIColor orangeColor].CGColor;
+    
+    //阴影透明度 [0 ~ 1]
+    self.layerView.layer.shadowOpacity = 0.5;
+    
+    self.layerView.layer.shadowColor = [UIColor greenColor].CGColor;
+    self.layerView.layer.shadowOffset = CGSizeMake(3, 5); //默认 [0, -3]
+    self.layerView.layer.shadowRadius = 10; // 阴影模糊度，默认3，值越大越平滑
+    //当对阴影进行裁剪时，若使用 masksToBounds 会将阴影裁剪掉
+    //此时可以在底部加一层图层单独做阴影效果，上面的图层单独做裁剪效果
+    
+    //阴影效果并不由图层边界决定，而是由图层及所属子视图共同决定阴影的形状
+    //可使用 shadowPath 自由规划阴影形状
+    CGMutablePathRef pathRef = CGPathCreateMutable();
+    CGPathAddRect(pathRef, nil, CGRectMake(20, 20, self.layerView.frame.size.width, self.layerView.frame.size.height));
+    self.layerView.layer.shadowPath = pathRef;
+    
+    
+    //蒙版 mask
+    //“如果mask图层比父图层要小，只有在mask图层里面的内容才是它关心的，除此以外的一切都会被隐藏起来。”
+    CALayer *maskLayer = [CALayer layer];
+    maskLayer.frame = self.layerView.bounds;
+    maskLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"img1"].CGImage);
+    blueLayer.mask = maskLayer;
+    
+    //组透明 shouldRasterize
+    //设置为yes，系统会将图层及子视图当作一个图片整体进行处理
+    self.layerView.layer.shouldRasterize = YES;
+    self.layerView.layer.opacity = 0.5; // opacity 相当于 alpha
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
