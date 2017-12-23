@@ -6,15 +6,15 @@
 //  Copyright © 2017年 mortal. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "BaseViewController.h"
 
-@interface MainViewController ()
+@interface BaseViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *layerView;
 @property (strong, nonatomic) CALayer *blueLayer;
 @end
 
-@implementation MainViewController
+@implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

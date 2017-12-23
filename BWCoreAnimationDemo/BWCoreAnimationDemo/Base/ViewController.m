@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 
-#import "MainViewController.h"
+#import "BaseViewController.h"
+#import "TransViewController.h"
 
 @interface ViewController ()
 
@@ -20,10 +21,16 @@
     [super viewDidLoad];
 }
 
-- (IBAction)coreBtnClick:(UIButton *)sender {
+- (IBAction)baseBtnClick:(UIButton *)sender {
     
-    MainViewController *mainVC = [MainViewController new];
+    BaseViewController *mainVC = [BaseViewController new];
     [self.navigationController pushViewController:mainVC animated:YES];
+}
+
+- (IBAction)TransBtnClick:(UIButton *)sender {
+    
+    TransViewController *transVC = [TransViewController new];
+    [self.navigationController pushViewController:transVC animated:YES];
 }
 
 @end

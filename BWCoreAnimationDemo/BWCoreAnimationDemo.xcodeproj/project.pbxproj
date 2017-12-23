@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23A6C3751FE923F60052724D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C3721FE923F60052724D /* MainViewController.xib */; };
-		23A6C3761FE923F60052724D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C3731FE923F60052724D /* MainViewController.m */; };
+		2372F9341FEE44020059573C /* TransViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2372F9321FEE44020059573C /* TransViewController.m */; };
+		2372F9351FEE44020059573C /* TransViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2372F9331FEE44020059573C /* TransViewController.xib */; };
+		23A6C3751FE923F60052724D /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C3721FE923F60052724D /* BaseViewController.xib */; };
+		23A6C3761FE923F60052724D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C3731FE923F60052724D /* BaseViewController.m */; };
 		23A6C37F1FE924340052724D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C3781FE924330052724D /* Assets.xcassets */; };
 		23A6C3801FE924340052724D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C3791FE924330052724D /* LaunchScreen.storyboard */; };
 		23A6C3811FE924340052724D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C37B1FE924330052724D /* Main.storyboard */; };
@@ -20,10 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2372F9311FEE44020059573C /* TransViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransViewController.h; sourceTree = "<group>"; };
+		2372F9321FEE44020059573C /* TransViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransViewController.m; sourceTree = "<group>"; };
+		2372F9331FEE44020059573C /* TransViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransViewController.xib; sourceTree = "<group>"; };
 		23A6C3581FE923830052724D /* BWCoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWCoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		23A6C3721FE923F60052724D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		23A6C3731FE923F60052724D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		23A6C3741FE923F60052724D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		23A6C3721FE923F60052724D /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		23A6C3731FE923F60052724D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		23A6C3741FE923F60052724D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		23A6C3781FE924330052724D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23A6C37A1FE924330052724D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23A6C37C1FE924330052724D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,9 +81,12 @@
 		23A6C3711FE923F60052724D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				23A6C3741FE923F60052724D /* MainViewController.h */,
-				23A6C3731FE923F60052724D /* MainViewController.m */,
-				23A6C3721FE923F60052724D /* MainViewController.xib */,
+				23A6C3741FE923F60052724D /* BaseViewController.h */,
+				23A6C3731FE923F60052724D /* BaseViewController.m */,
+				23A6C3721FE923F60052724D /* BaseViewController.xib */,
+				2372F9311FEE44020059573C /* TransViewController.h */,
+				2372F9321FEE44020059573C /* TransViewController.m */,
+				2372F9331FEE44020059573C /* TransViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -168,9 +176,10 @@
 				23A6C3831FE924340052724D /* Info.plist in Resources */,
 				23A6C3811FE924340052724D /* Main.storyboard in Resources */,
 				23A6C3801FE924340052724D /* LaunchScreen.storyboard in Resources */,
-				23A6C3751FE923F60052724D /* MainViewController.xib in Resources */,
+				23A6C3751FE923F60052724D /* BaseViewController.xib in Resources */,
 				23A6C38A1FE924610052724D /* ViewController.xib in Resources */,
 				23A6C37F1FE924340052724D /* Assets.xcassets in Resources */,
+				2372F9351FEE44020059573C /* TransViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,8 +192,9 @@
 			files = (
 				23A6C3821FE924340052724D /* main.m in Sources */,
 				23A6C38C1FE924610052724D /* AppDelegate.m in Sources */,
-				23A6C3761FE923F60052724D /* MainViewController.m in Sources */,
+				23A6C3761FE923F60052724D /* BaseViewController.m in Sources */,
 				23A6C38B1FE924610052724D /* ViewController.m in Sources */,
+				2372F9341FEE44020059573C /* TransViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
