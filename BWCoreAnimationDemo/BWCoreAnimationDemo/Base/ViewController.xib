@@ -42,13 +42,26 @@
                         <action selector="TransBtnClick:" destination="-1" eventType="touchUpInside" id="CdF-Hf-Msi"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsy-q0-SwU">
+                    <rect key="frame" x="87.5" y="240" width="200" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="msn-Gw-ZSF"/>
+                    </constraints>
+                    <state key="normal" title="专用图层"/>
+                    <connections>
+                        <action selector="specialBtnClick:" destination="-1" eventType="touchUpInside" id="OLN-L8-sfa"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Hsy-q0-SwU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KJR-zp-O9t"/>
                 <constraint firstItem="kcg-v6-jPo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="XDO-AL-CNV"/>
                 <constraint firstItem="r7S-05-A8J" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bZ3-Kn-q35"/>
                 <constraint firstItem="kcg-v6-jPo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="brX-Ze-ygO"/>
                 <constraint firstItem="r7S-05-A8J" firstAttribute="top" secondItem="kcg-v6-jPo" secondAttribute="bottom" constant="30" id="oXH-Ok-hoW"/>
+                <constraint firstItem="Hsy-q0-SwU" firstAttribute="top" secondItem="r7S-05-A8J" secondAttribute="bottom" constant="30" id="vBH-9n-ani"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

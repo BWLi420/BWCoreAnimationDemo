@@ -10,6 +10,7 @@
 
 #import "BaseViewController.h"
 #import "TransViewController.h"
+#import "SpecialViewController.h"
 
 @interface ViewController ()
 
@@ -31,6 +32,12 @@
     
     TransViewController *transVC = [TransViewController new];
     [self.navigationController pushViewController:transVC animated:YES];
+}
+
+- (IBAction)specialBtnClick:(UIButton *)sender {
+    
+    SpecialViewController *specialVC = [SpecialViewController new];
+    [self.navigationController pushViewController:specialVC animated:YES];
 }
 
 @end

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2372F9341FEE44020059573C /* TransViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2372F9321FEE44020059573C /* TransViewController.m */; };
 		2372F9351FEE44020059573C /* TransViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2372F9331FEE44020059573C /* TransViewController.xib */; };
+		2372F9391FEE5F910059573C /* SpecialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2372F9371FEE5F910059573C /* SpecialViewController.m */; };
+		2372F93A1FEE5F910059573C /* SpecialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2372F9381FEE5F910059573C /* SpecialViewController.xib */; };
 		23A6C3751FE923F60052724D /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C3721FE923F60052724D /* BaseViewController.xib */; };
 		23A6C3761FE923F60052724D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C3731FE923F60052724D /* BaseViewController.m */; };
 		23A6C37F1FE924340052724D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C3781FE924330052724D /* Assets.xcassets */; };
@@ -25,6 +27,9 @@
 		2372F9311FEE44020059573C /* TransViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransViewController.h; sourceTree = "<group>"; };
 		2372F9321FEE44020059573C /* TransViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransViewController.m; sourceTree = "<group>"; };
 		2372F9331FEE44020059573C /* TransViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransViewController.xib; sourceTree = "<group>"; };
+		2372F9361FEE5F910059573C /* SpecialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialViewController.h; sourceTree = "<group>"; };
+		2372F9371FEE5F910059573C /* SpecialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialViewController.m; sourceTree = "<group>"; };
+		2372F9381FEE5F910059573C /* SpecialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialViewController.xib; sourceTree = "<group>"; };
 		23A6C3581FE923830052724D /* BWCoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWCoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A6C3721FE923F60052724D /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		23A6C3731FE923F60052724D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -87,6 +92,9 @@
 				2372F9311FEE44020059573C /* TransViewController.h */,
 				2372F9321FEE44020059573C /* TransViewController.m */,
 				2372F9331FEE44020059573C /* TransViewController.xib */,
+				2372F9361FEE5F910059573C /* SpecialViewController.h */,
+				2372F9371FEE5F910059573C /* SpecialViewController.m */,
+				2372F9381FEE5F910059573C /* SpecialViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 			files = (
 				23A6C3831FE924340052724D /* Info.plist in Resources */,
 				23A6C3811FE924340052724D /* Main.storyboard in Resources */,
+				2372F93A1FEE5F910059573C /* SpecialViewController.xib in Resources */,
 				23A6C3801FE924340052724D /* LaunchScreen.storyboard in Resources */,
 				23A6C3751FE923F60052724D /* BaseViewController.xib in Resources */,
 				23A6C38A1FE924610052724D /* ViewController.xib in Resources */,
@@ -190,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2372F9391FEE5F910059573C /* SpecialViewController.m in Sources */,
 				23A6C3821FE924340052724D /* main.m in Sources */,
 				23A6C38C1FE924610052724D /* AppDelegate.m in Sources */,
 				23A6C3761FE923F60052724D /* BaseViewController.m in Sources */,
