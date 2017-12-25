@@ -22,7 +22,9 @@
     
 //    [self textLayer];
     
-    [self transformLayer];
+//    [self transformLayer];
+    
+    [self gradientLayer];
 }
 
 #pragma mark - CAShapeLayer
@@ -143,7 +145,6 @@
     return cube;
 }
 
-
 - (CALayer *)faceWithTransform:(CATransform3D)transform {
     
     CALayer *layer = [CALayer layer];
@@ -157,6 +158,25 @@
     layer.transform = transform;
     
     return layer;
+}
+
+#pragma mark - CAGradientLayer 绘制颜色平滑渐变
+- (void)gradientLayer {
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.contentView.bounds;
+    [self.contentView.layer addSublayer:gradientLayer];
+    
+    //基本渐变
+//    gradientLayer.colors = @[(__bridge id)[UIColor blueColor].CGColor, (__bridge id)[UIColor redColor].CGColor];
+//    gradientLayer.startPoint = CGPointMake(0, 0);
+//    gradientLayer.endPoint = CGPointMake(1, 1);
+    
+    //多重渐变
+    gradientLayer.colors = @[(__bridge id)[UIColor redColor].CGColor, (__bridge id)[UIColor greenColor].CGColor, (__bridge id)[UIColor blueColor].CGColor];
+    gradientLayer.locations = @[@0.1, @0.5, @0.7];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1, 1);
 }
 
 @end
