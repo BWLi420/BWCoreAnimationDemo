@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self shapeLayer];
+    [self shapeLayer];
     
 //    [self textLayer];
     
@@ -30,7 +30,7 @@
     
 //    [self scrollLayer];
     
-    [self emitterLayer];
+//    [self emitterLayer];
 }
 
 #pragma mark - CAShapeLayer
@@ -61,6 +61,33 @@
     shapeLayer.path = p3.CGPath;
     
     [self.contentView.layer addSublayer:shapeLayer];
+    
+    
+    //动画
+    CALayer *layer = [CALayer layer];
+    layer.frame = CGRectMake(100, 20, 10, 10);
+    layer.backgroundColor = [UIColor orangeColor].CGColor;
+    
+    //CABasicAnimation
+    CABasicAnimation *basicAni = [CABasicAnimation animation];
+    basicAni.keyPath = @"backgroundColor";
+    basicAni.toValue = (__bridge id _Nullable)([UIColor greenColor].CGColor);
+    
+    //帧动画
+    CAKeyframeAnimation *keyAni = [CAKeyframeAnimation animation];
+    keyAni.path = p3.CGPath;
+    keyAni.keyPath = @"position";
+    keyAni.rotationMode = kCAAnimationRotateAuto;//动画模式
+//    keyAni.repeatCount = 3;//次数
+    
+    //动画组
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.animations = @[basicAni, keyAni];
+    group.duration = 5.0;
+    group.repeatCount = 3;
+    
+    [layer addAnimation:group forKey:nil];
+    [self.contentView.layer addSublayer:layer];
 }
 
 #pragma mark - CATextLayer
