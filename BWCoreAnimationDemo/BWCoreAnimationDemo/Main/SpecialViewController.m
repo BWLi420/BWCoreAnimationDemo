@@ -26,7 +26,11 @@
     
 //    [self gradientLayer];
     
-    [self replicatorLayer];
+//    [self replicatorLayer];
+    
+//    [self scrollLayer];
+    
+    [self emitterLayer];
 }
 
 #pragma mark - CAShapeLayer
@@ -221,6 +225,64 @@
     
     [repLayer addSublayer:layer];
  */
+}
+
+#pragma mark - CAScrollLayer
+- (void)scrollLayer {
+    
+    self.contentView.layer.masksToBounds = YES;
+    self.contentView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"img1"].CGImage);
+    self.contentView.layer.transform = CATransform3DMakeScale(2, 2, 0);
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    [self.contentView addGestureRecognizer:pan];
+}
+
+- (void)pan:(UIPanGestureRecognizer *)ges {
+    
+    CGPoint offset = self.contentView.bounds.origin;
+    offset.x -= [ges translationInView:self.contentView].x;
+    offset.y -= [ges translationInView:self.contentView].y;
+    
+    //scroll the layer
+    [(CAScrollLayer *)self.contentView.layer scrollToPoint:offset];
+    
+    //reset the pan gesture translation
+    [ges setTranslation:CGPointZero inView:self.contentView];
+    
+    // scrollPoint:方法从图层树中查找并找到第一个可用的CAScrollLayer，然后滑动它使得指定点成为可视的
+    // scrollRectToVisible:方法实现了同样的事情只不过是作用在一个矩形上的
+    // visibleRect:属性决定图层（如果存在的话）的哪部分是当前的可视区域
+}
+
+#pragma mark - CATiledLayer 切割绘制大图
+- (void)tiledLayer {
+    
+    // imageNamed: 或 imageWithContentsOfFile: 对于超大图可能会造成阻塞主线程
+    
+}
+
+#pragma mark - CAEmitterLayer 高性能的粒子引擎
+- (void)emitterLayer {
+    
+    // 一个 CAEmitterCell 类似于一个 CALayer
+    CAEmitterLayer *emitter = [CAEmitterLayer layer];
+    emitter.frame = self.contentView.bounds;
+    [self.contentView.layer addSublayer:emitter];
+    
+    emitter.renderMode = kCAEmitterLayerAdditive;
+    emitter.emitterPosition = CGPointMake(emitter.bounds.size.width * 0.5, emitter.bounds.size.height * 0.5);
+    
+    CAEmitterCell *cell = [[CAEmitterCell alloc] init];
+    cell.contents = (__bridge id _Nullable)([UIImage imageNamed:@"Snow"].CGImage);
+    cell.birthRate = 100;//粒子个数
+    cell.lifetime = 5.0;//粒子消失时间
+    cell.color = [UIColor colorWithRed:1 green:0.5 blue:0.1 alpha:1.0].CGColor;//指定一个可以混合图片内容颜色的混合色
+    cell.alphaSpeed = -0.2;//透明度每秒变化量
+    cell.velocity = 50;//初始移动速度
+    cell.velocityRange = 100;//初始移动范围
+    cell.emissionRange = M_PI * 2;//可以从360度任意位置反射出来
+    
+    emitter.emitterCells = @[cell];
 }
 
 @end
