@@ -24,7 +24,9 @@
     
 //    [self transformLayer];
     
-    [self gradientLayer];
+//    [self gradientLayer];
+    
+    [self replicatorLayer];
 }
 
 #pragma mark - CAShapeLayer
@@ -177,6 +179,48 @@
     gradientLayer.locations = @[@0.1, @0.5, @0.7];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1, 1);
+}
+
+#pragma mark - CAReplicatorLayer 重复图层
+//“高效生成许多相似的图层，它会绘制一个或多个图层的子图层，并在每个复制体上应用不同的变换”
+- (void)replicatorLayer {
+    
+    CAReplicatorLayer *replicatorLayer = [CAReplicatorLayer layer];
+    replicatorLayer.frame = self.contentView.bounds;
+    [self.contentView.layer addSublayer:replicatorLayer];
+    
+    replicatorLayer.instanceCount = 10;//重复的个数
+    
+    CATransform3D transform = CATransform3DIdentity;
+    transform = CATransform3DTranslate(transform, 0, 50, 0);
+    transform = CATransform3DRotate(transform, M_PI / 5.0, 0, 0, 1);
+    transform = CATransform3DTranslate(transform, 0, -50, 0);
+    replicatorLayer.instanceTransform = transform;
+    
+    replicatorLayer.instanceGreenOffset = -0.1;//逐步减少绿色通道
+    
+    CALayer *layer = [CALayer layer];
+    layer.frame = CGRectMake(75, 75, 50, 50);
+    layer.backgroundColor = [UIColor greenColor].CGColor;
+    [replicatorLayer addSublayer:layer];
+    
+/**
+    //反射效果
+    // 继承 ReflectionView 的view会自动实现反射效果
+    CAReplicatorLayer *repLayer = [CAReplicatorLayer layer];
+    repLayer.frame = self.contentView.bounds;
+    [self.contentView.layer addSublayer:repLayer];
+    
+    repLayer.instanceCount = 2;
+    
+    CATransform3D tf = CATransform3DIdentity;
+    tf = CATransform3DTranslate(tf, 0, layer.bounds.size.height + 5, 0);
+    tf = CATransform3DScale(tf, 1, -1, 0);
+    repLayer.instanceTransform = tf;
+    repLayer.instanceAlphaOffset = -0.6;
+    
+    [repLayer addSublayer:layer];
+ */
 }
 
 @end
