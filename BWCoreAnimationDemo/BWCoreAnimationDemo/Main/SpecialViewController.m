@@ -11,6 +11,7 @@
 @interface SpecialViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @end
 
 @implementation SpecialViewController
@@ -88,6 +89,55 @@
     
     [layer addAnimation:group forKey:nil];
     [self.contentView.layer addSublayer:layer];
+    
+    //过渡动画 (动画执行不能放在 viewDidLoad 中)
+    self.imgView.image = [UIImage imageNamed:@"img1"];
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGes:)];
+    [self.contentView addGestureRecognizer:pan];
+}
+
+- (void)panGes:(UIPanGestureRecognizer *)ges {
+    
+    //过渡动画
+    
+    // 1.
+//    CATransition *trans = [CATransition animation];
+//    trans.type = kCATransitionMoveIn;
+//    trans.subtype = kCATransitionFromRight;
+//    [self.imgView.layer addAnimation:trans forKey:nil];
+//
+    
+    // 2.
+//    [UIView transitionWithView:self.imgView duration:2.0 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+//
+//        self.imgView.image = [UIImage imageNamed:@"Snow"];
+//    } completion:^(BOOL finished) {
+//
+//        NSLog(@"%d", finished);
+//    }];
+    
+    // 3.
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, YES, 0);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = self.view.bounds;
+    [self.view addSubview:imageView];
+    self.view.backgroundColor = [UIColor orangeColor];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(0.1, 0.1);
+        transform = CGAffineTransformRotate(transform, M_PI_2);
+        imageView.transform = transform;
+        imageView.alpha = 0;
+        
+    } completion:^(BOOL finished) {
+        
+        [imageView removeFromSuperview];
+        NSLog(@"%d", finished);
+    }];
 }
 
 #pragma mark - CATextLayer
