@@ -86,9 +86,24 @@
     group.animations = @[basicAni, keyAni];
     group.duration = 5.0;
     group.repeatCount = 3;
+//    group.repeatDuration = 2.0;
+//    group.autoreverses = YES;//自动回放
     
-    [layer addAnimation:group forKey:nil];
+//    group.beginTime;//延时时间
+//    group.timeOffset;//起始动画开始时间
+//    group.speed;//动画速度
+//    group.fillMode = kCAFillModeForwards;
+    
+    //动画缓冲
+    group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    [layer addAnimation:group forKey:@"group"];
     [self.contentView.layer addSublayer:layer];
+    
+    //移除动画
+//    [layer removeAllAnimations];//1.
+//    [layer removeAnimationForKey:@"group"];//2.
+    
     
     //过渡动画 (动画执行不能放在 viewDidLoad 中)
     self.imgView.image = [UIImage imageNamed:@"img1"];
