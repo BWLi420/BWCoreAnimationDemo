@@ -11,6 +11,7 @@
 #import "BaseViewController.h"
 #import "TransViewController.h"
 #import "SpecialViewController.h"
+#import "SettingViewController.h"
 
 @interface ViewController ()
 
@@ -36,7 +37,10 @@
 
 - (IBAction)specialBtnClick:(UIButton *)sender {
     
-    SpecialViewController *specialVC = [SpecialViewController new];
+//    SpecialViewController *specialVC = [SpecialViewController new];
+//    [self.navigationController pushViewController:specialVC animated:YES];
+    
+    SettingViewController *specialVC = [SettingViewController new];
     [self.navigationController pushViewController:specialVC animated:YES];
 }
 

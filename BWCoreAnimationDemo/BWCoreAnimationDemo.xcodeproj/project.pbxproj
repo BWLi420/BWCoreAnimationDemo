@@ -21,6 +21,8 @@
 		23A6C38A1FE924610052724D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A6C3861FE924610052724D /* ViewController.xib */; };
 		23A6C38B1FE924610052724D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C3871FE924610052724D /* ViewController.m */; };
 		23A6C38C1FE924610052724D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C3881FE924610052724D /* AppDelegate.m */; };
+		23F98EED1FF238A300FA476E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F98EEB1FF238A300FA476E /* SettingViewController.m */; };
+		23F98EEE1FF238A300FA476E /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23F98EEC1FF238A300FA476E /* SettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		23A6C3871FE924610052724D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		23A6C3881FE924610052724D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		23A6C3891FE924610052724D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		23F98EEA1FF238A300FA476E /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		23F98EEB1FF238A300FA476E /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		23F98EEC1FF238A300FA476E /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,9 @@
 				2372F9361FEE5F910059573C /* SpecialViewController.h */,
 				2372F9371FEE5F910059573C /* SpecialViewController.m */,
 				2372F9381FEE5F910059573C /* SpecialViewController.xib */,
+				23F98EEA1FF238A300FA476E /* SettingViewController.h */,
+				23F98EEB1FF238A300FA476E /* SettingViewController.m */,
+				23F98EEC1FF238A300FA476E /* SettingViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A6C3831FE924340052724D /* Info.plist in Resources */,
+				23F98EEE1FF238A300FA476E /* SettingViewController.xib in Resources */,
 				23A6C3811FE924340052724D /* Main.storyboard in Resources */,
 				2372F93A1FEE5F910059573C /* SpecialViewController.xib in Resources */,
 				23A6C3801FE924340052724D /* LaunchScreen.storyboard in Resources */,
@@ -202,6 +211,7 @@
 				2372F9391FEE5F910059573C /* SpecialViewController.m in Sources */,
 				23A6C3821FE924340052724D /* main.m in Sources */,
 				23A6C38C1FE924610052724D /* AppDelegate.m in Sources */,
+				23F98EED1FF238A300FA476E /* SettingViewController.m in Sources */,
 				23A6C3761FE923F60052724D /* BaseViewController.m in Sources */,
 				23A6C38B1FE924610052724D /* ViewController.m in Sources */,
 				2372F9341FEE44020059573C /* TransViewController.m in Sources */,
